@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+  db:
+    image: timescale/timescaledb:latest-pg16
+    container_name: rentio_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: rentio
+      POSTGRES_USER: rentio_user
+      POSTGRES_PASSWORD: rentio_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - rentio_pgdata:/var/lib/postgresql/data
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/01_schema.sql
+      - ./database/seed.sql:/docker-entrypoint-initdb.d/02_seed.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U rentio_user -d rentio"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  rentio_pgdata:
