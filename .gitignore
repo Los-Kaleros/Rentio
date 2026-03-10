@@ -1,5 +1,10 @@
 # ── Osobné / lokálne nastavenia ────────────────────────────
 .claude/
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
 # ── Archívy ────────────────────────────────────────────────
 *.zip
@@ -12,7 +17,6 @@ SWI_extracted/frog.jpg
 
 # ── LaTeX build artefakty ───────────────────────────────────
 *.aux
-*.log
 *.out
 *.toc
 *.synctex.gz
@@ -26,5 +30,31 @@ SWI_extracted/frog.jpg
 *.snm
 *.vrb
 
+# ── Build výstupy ───────────────────────────────────────────
+dist/
+build/
+bin/
+out/
+
+# ── Závislosti ──────────────────────────────────────────────
+node_modules/
+vendor/
+.venv/
+env/
+venv/
+ENV/
+python_env/
+target/
+
+# ── Logy ────────────────────────────────────────────────────
+*.log
+logs/
+
 # ── macOS ───────────────────────────────────────────────────
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
