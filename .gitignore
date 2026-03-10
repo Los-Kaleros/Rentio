@@ -1,0 +1,30 @@
+# ── Osobné / lokálne nastavenia ────────────────────────────
+.claude/
+
+# ── Archívy ────────────────────────────────────────────────
+*.zip
+
+# ── PDF súbory (binárne, generované alebo cudzie dokumenty) ─
+*.pdf
+
+# ── Nevyužité assety ────────────────────────────────────────
+SWI_extracted/frog.jpg
+
+# ── LaTeX build artefakty ───────────────────────────────────
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.nav
+*.snm
+*.vrb
+
+# ── macOS ───────────────────────────────────────────────────
+.DS_Store
